@@ -1,5 +1,5 @@
 <?php
 
 
-echo "This is my live server";
+echo "This is Ayeyis live server";
 ?>
