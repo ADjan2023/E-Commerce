@@ -6,7 +6,7 @@
 	<title>E-Commerce Labs</title>
 </head>
 <body>
-<button>Lab 1</button>
+<a href="Login/register.php"><button>Lab 1</button></a>
 </body>
 </html>
 
