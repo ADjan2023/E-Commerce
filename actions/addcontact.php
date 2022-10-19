@@ -15,6 +15,7 @@ $contact=$_POST['contact'];
 $role=1;
 
 if (isset($_POST['register']) and $unencryptpass==$confirmpass) {
+
 	if(add_contact_ctr($name,$email,$password,$country,$city,$contact,$role)==TRUE){
 		header('Location:../Login/login.php');
 	}
@@ -24,7 +25,7 @@ if (isset($_POST['register']) and $unencryptpass==$confirmpass) {
 		header('Location:../Login/register.php');
 	}	
 }
-else{
+else {
 	session_start();
 	$_SESSION['error'] = 'Unable to register user!';
 	header('Location:../Login/register.php');
