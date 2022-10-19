@@ -13,21 +13,26 @@ $country=$_POST['country'];
 $city=$_POST['city'];
 $contact=$_POST['contact'];
 $role=1;
+if(isset($_POST['register'])){
+	if ( $unencryptpass==$confirmpass) {
 
-if (isset($_POST['register']) and $unencryptpass==$confirmpass) {
-
-	if(add_contact_ctr($name,$email,$password,$country,$city,$contact,$role)==TRUE){
-		header('Location:../Login/login.php');
+		if(add_contact_ctr($name,$email,$password,$country,$city,$contact,$role)==TRUE){
+			header('Location:../Login/login.php');
+		}
+		else{
+			session_start();
+			$_SESSION['error'] = 'Unable to register user!';		
+			header('Location:../Login/register.php');
+		}	
 	}
 	else{
 		session_start();
 		$_SESSION['error'] = 'Unable to register user!';		
 		header('Location:../Login/register.php');
-	}	
+	}
 }
 else {
-	session_start();
-	$_SESSION['error'] = 'Unable to register user!';
+	
 	header('Location:../Login/register.php');
 }
 ?>
