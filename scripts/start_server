@@ -1,5 +1,0 @@
-#!/bin/bash
-cd /var/www/html
-composer install 
-chmod -R 777 bootstrap/ storage/ 
-service httpd restart
