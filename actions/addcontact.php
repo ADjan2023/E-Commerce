@@ -1,15 +1,17 @@
 <?php
 //making action  aware of controller
-include("../controllers/general_controller.php");
+include("../controllers/customer_controller.php");
 
 //collect form data
 if (isset($_POST['add'])) {
 	$fname=$_POST['fname'];
 	$phone=$_POST['number'];
 
-	add_contact_ctr($fname,$phone);
+	if(add_contact_ctr($name,$email,$password,$country,$city,$contact)==TRUE){
+		header('Location:../Login/login.php');
+	}
 	
-		header('Location:../view/form.php');
+		
 	
 }
 

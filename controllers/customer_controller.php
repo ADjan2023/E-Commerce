@@ -6,9 +6,9 @@ require("../classes/general_class.php");
 
 
 //--INSERT--//
-function add_contact_ctr($a,$b){
+function add_contact_ctr($name,$email,$password,$country,$city,$contact){
 	$addcontact=new general_class();
-	return $addcontact->add_contact($a,$b);
+	return $addcontact->add_contact($name,$email,$password,$country,$city,$contact);
 
 
 }

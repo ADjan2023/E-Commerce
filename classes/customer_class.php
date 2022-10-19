@@ -13,9 +13,9 @@ require("../settings/db_class.php");
 class general_class extends db_connection
 {
 	//--INSERT--//
-	public function add_contact($a,$b)
+	public function add_contact($name,$email,$password,$country,$city,$contact)
 	{
-		$sql="INSERT INTO `phonebook`( `pname`, `pphoned`) VALUES ('$a','$b')";
+		$sql="INSERT INTO `customer`(`customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`) VALUES ('$name','$email','$password','$country','$city','$contact')";
 		/*$db1=new db_connection
 		return $db1.db_query($sql);*/
 		return $this->db_query($sql);
