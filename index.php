@@ -11,9 +11,14 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 </head>
-
+ <section id="features" class="p-10 md-p-l5">
+        <div class="mx-5 md-mx-l5">
+                <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900 ">Ayeyi's E-Commerce Labs</h1>  
+        </div>  
+    </section>
 <body class="bg-black muli">
    
+
 
   
     <!-- features -->
