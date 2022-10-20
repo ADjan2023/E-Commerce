@@ -28,7 +28,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-6 col-lg-4">
 					<div class="login-wrap p-0">
-		      	<form action="../actions/addcontact.php" class="signin-form" method="POST">
+		      	<form action="../actions/registerprocess.php" class="signin-form" method="POST">
 		      		<div class="form-group">
 		      			<input type="text" class="form-control" placeholder="Full Name" name="fullname" required>
 		      		</div>
@@ -59,17 +59,17 @@
 	            </div>
 	            
 	          </form>
-	           <?php
-        session_start();
-    
-        if (!empty($_SESSION['error'])){
-    ?>
-    <div class="w-100 text-center" style="color: red;">
-    <?php
-        echo $_SESSION['error'];
-        unset($_SESSION['error']);
-        }
-    ?>
+	          <?php
+	          session_start();
+
+	          if (!empty($_SESSION['error'])){
+	          	?>
+	          	<div class="w-100 text-center" style="color: red;">
+	          		<?php
+	          		echo $_SESSION['error'];
+	          		unset($_SESSION['error']);
+	          	}
+	          	?>
    </div>
 	         <p class="w-100 text-center">Have an account, <a href="login.php">Login</a> </p>
 		      </div>

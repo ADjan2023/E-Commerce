@@ -12,10 +12,10 @@ function add_customer_ctr($name,$email,$password,$country,$city,$contact,$role){
 }
 
 
-//--VLogin--//
-function verify_customer_ctr($a){
-	$select_one=new customer_class();
-	return $select_one->select_one_customer($a);
+//--Verify Login--//
+function verify_customer_ctr($email){
+	$verify=new customer_class();
+	return $verify->verify_customer($email);
 }
 
 //--UPDATE--//

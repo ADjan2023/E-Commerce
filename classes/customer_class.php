@@ -28,6 +28,12 @@ class customer_class extends db_connection
 		return $this->db_fetch_all($sql);
 	}
 
+	public function verify_customer($email)
+	{
+		$sql="SELECT * FROM `customer` WHERE `customer_email`='$email' ";
+		return $this->db_fetch_one($sql);
+	}
+
 	public function select_all_customer()
 	{
 		$sql="SELECT * FROM `customer`";
