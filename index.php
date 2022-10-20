@@ -31,7 +31,7 @@
                             data-feather="cpu" class="w-l5"></i></div>
                     <h4 class="white fw-600 fs-m3 mb-5">REGISTER</h4>
                     <div class="indigo-lightest fw-600 fs-m1 opacity-50">Complete Tasks 1, 2, and 3</div>
-                    <a href="Login/login.php"
+                    <a href="Login/register.php"
                         class="mt-5 button bg-indigo-lightest-10 fs-s3 white no-underline hover-opacity-100 hover-scale-up-1 ease-300">Proceed</a>
                 </div>
             </div>
