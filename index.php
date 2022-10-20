@@ -45,7 +45,7 @@
                         class="mt-5 button bg-indigo-lightest-10 fs-s3 white no-underline hover-opacity-100 hover-scale-up-1 ease-300">Proceed</a>
                 </div>
             </div>
-            
+           
         </div>
     </section>
 

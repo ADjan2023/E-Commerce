@@ -16,7 +16,7 @@ $role=1;
 if(isset($_POST['register'])){
 	if ( $unencryptpass==$confirmpass) {
 
-		if(add_contact_ctr($name,$email,$password,$country,$city,$contact,$role)==TRUE){
+		if(add_customer_ctr($name,$email,$password,$country,$city,$contact,$role)==TRUE){
 			header('Location:../Login/login.php');
 		}
 		else{

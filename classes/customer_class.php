@@ -10,10 +10,10 @@ require("../settings/db_class.php");
  *
  */
 
-class general_class extends db_connection
+class customer_class extends db_connection
 {
 	//--INSERT--//
-	public function add_contact($name,$email,$password,$country,$city,$contact,$role)
+	public function add_customer($name,$email,$password,$country,$city,$contact,$role)
 	{
 		$sql="INSERT INTO `customer`(`customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `user_role`) VALUES ('$name','$email','$password','$country','$city','$contact','$role')";
 		/*$db1=new db_connection
@@ -22,32 +22,32 @@ class general_class extends db_connection
 	}
 
 	//--SELECT--//
-	public function select_one_contact($id)
+	public function select_one_customer($id)
 	{
-		$sql="SELECT * FROM `phonebook` WHERE `pid`='$id'";
+		$sql="SELECT * FROM `customer` WHERE `customer_id`='$id'";
 		return $this->db_fetch_all($sql);
 	}
 
-	public function select_all_contacts()
+	public function select_all_customer()
 	{
-		$sql="SELECT * FROM `phonebook`";
+		$sql="SELECT * FROM `customer`";
 		return $this->db_fetch_all($sql);
 	}
 
 
 	//--UPDATE--//
-	public function update_contact($id,$a,$b)
+	public function update_customer($id,$name,$email,$country,$city,$contact)
 	{
-		$sql="UPDATE `phonebook` SET `pname`='$a',`pphoned`='$b' WHERE `pid`='$id'";
+		$sql="UPDATE `customer` SET `customer_name`='$name',`customer_country`='$country',`customer_city`='$city',`customer_contact`='$contact' WHERE `customer_id`='$id'";
 		return $this->db_query($sql);
 	}
 
 
 
 	//--DELETE--//
-	public function delete_contact($id)
+	public function delete_customer($id)
 	{
-		$sql="DELETE FROM `phonebook` WHERE `pid`='$id'";
+		$sql="DELETE FROM `customer` WHERE `pid`='$id'";
 		return $this->db_query($sql);
 	}
 
