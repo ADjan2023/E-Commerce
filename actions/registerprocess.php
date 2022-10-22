@@ -12,7 +12,7 @@ $password=password_hash($unencryptpass, PASSWORD_DEFAULT);
 $country=$_POST['country'];
 $city=$_POST['city'];
 $contact=$_POST['contact'];
-$role=1;
+$role=2;
 if(isset($_POST['register'])){
 	if ( $unencryptpass==$confirmpass) {
 
