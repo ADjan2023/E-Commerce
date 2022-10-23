@@ -47,7 +47,7 @@
 
 	$(document).ready(function(){
 		$("#password-field").keyup(function(){
-			var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+			var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
 			if (!re.test($("#password-field").val()) ) {
 				$("#strength").html("Password should be at least 8 characters and should contain a number, and upper and lower case letters").css("color","red");
 				document.getElementById('register').disabled=true;
