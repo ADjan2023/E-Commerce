@@ -53,7 +53,7 @@
 									<input type="text" class="form-control" placeholder="City" name="city" required>
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Contact Number" name="contact" required maxlength="10" onkeypress='validate(event)' oninvalid="this.setCustomValidity('Phone number should be 10 numbers')" oninput="this.setCustomValidity('')" onkeypress='validate(event)'>
+									<input type="text" class="form-control" placeholder="Contact Number" name="contact" required maxlength="10" onkeypress='validate(event)' oninvalid="this.setCustomValidity('Phone number should be 10 numbers')" oninput="this.setCustomValidity('')" >
 								</div>
 								<div class="form-group">
 									<button type="submit" id="register" class="form-control btn btn-primary submit px-3" name="register">Register</button>
