@@ -37,8 +37,23 @@
         $("#password-field1").keyup(function(){
              if ($("#password-field").val() != $("#password-field1").val()) {
                  $("#msg").html("Password do not match").css("color","red");
+                 document.getElementById('register').disabled=true;
              }else{
-                 $("#msg").html("Password matched").css("color","green");
+                 $("#msg").html("Password match").css("color","green");
+                 document.getElementById('register').disabled=false;
+            }
+      });
+});
+
+	 $(document).ready(function(){
+        $("#password-field").keyup(function(){
+        	var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+             if (!re.test($("#password-field").val()) ) {
+                 $("#strength").html("Password should be at least 8 characters and should contain a number, and upper and lower case letters").css("color","red");
+                 document.getElementById('register').disabled=true;
+             }else{
+                 $("#strength").html("Password is strong").css("color","green");
+                 document.getElementById('register').disabled=false;
             }
       });
 });
@@ -56,9 +71,14 @@ function validate(evt) {
       var key = theEvent.keyCode || theEvent.which;
       key = String.fromCharCode(key);
   }
-  var regex = /[0-9]|\./;
+  var regex = /^[0-9]{10}$/;
   if( !regex.test(key) ) {
     theEvent.returnValue = false;
     if(theEvent.preventDefault) theEvent.preventDefault();
   }
-}
+};
+
+
+
+
+
