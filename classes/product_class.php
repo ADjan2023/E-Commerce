@@ -57,19 +57,9 @@ class product_class extends db_connection
 		return $this->db_query($sql);
 	}
 
-	public function update_category($name,$id)
-	{
-		$sql="UPDATE `categories` SET `cat_name`='$name' WHERE `cat_id`=$id";
-		/*$db1=new db_connection
-		return $db1.db_query($sql);*/
-		return $this->db_query($sql);
-	}
+	
 
-	public function count_brands()
-	{
-		$sql="SELECT * FROM `brands`";
-		return db_count();
-	}
+	
 
 
 }
