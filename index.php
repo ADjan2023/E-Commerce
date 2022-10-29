@@ -70,7 +70,7 @@ if (!empty($_SESSION['id'])){
                     <div class="flex justify-center items-center bg-indigo-lightest-10 white w-l5 h-l5 br-round mb-5"><i
                         data-feather="cpu" class="w-l5"></i></div>
                         <h4 class="white fw-600 fs-m3 mb-5">REGISTER</h4>
-                        <div class="indigo-lightest fw-600 fs-m1 opacity-50">Complete Tasks 1, 2, and 3</div>
+                        <div class="indigo-lightest fw-600 fs-m1 opacity-50">Completed Tasks 1, 2, and 3</div>
                         <a href="Login/register.php"
                         class="mt-5 button bg-indigo-lightest-10 fs-s3 white no-underline hover-opacity-100 hover-scale-up-1 ease-300">Proceed</a>
                     </div>
@@ -80,7 +80,7 @@ if (!empty($_SESSION['id'])){
                         <div class="flex justify-center items-center bg-indigo-lightest-10 white w-l5 h-l5 br-round mb-5"><i
                             data-feather="cpu" class="w-l5"></i></div>
                             <h4 class="white fw-600 fs-m3 mb-5">LOGIN</h4>
-                            <div class="indigo-lightest fw-600 fs-m1 opacity-50">Complete Task 4</div>
+                            <div class="indigo-lightest fw-600 fs-m1 opacity-50">Completed Task 4, 5, 6, 7, and 8</div>
                             <a href="Login/login.php"
                             class="mt-5 button bg-indigo-lightest-10 fs-s3 white no-underline hover-opacity-100 hover-scale-up-1 ease-300">Proceed</a>
                         </div>
