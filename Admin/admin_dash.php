@@ -318,7 +318,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                             <form method="POST" action="../actions/add_brand.php">
                             <div class="d-flex mb-2">
                                 
-                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Brand Name" name="bname">
+                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Brand Name" name="bname" required>
                                 <button type="submit" name="save" class="btn btn-primary ms-2">Add</button>
                                 
                             </div>
@@ -343,7 +343,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                             <form method="POST" action="../actions/add_category.php">
                             <div class="d-flex mb-2">
                                 
-                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Category Name" name="cname">
+                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Category Name" name="cname" required>
                                 <button type="submit" name="save" class="btn btn-primary ms-2">Add</button>
                                 
                             </div>
