@@ -20,7 +20,9 @@ function viewBrands(){
 									<?php 
 									echo $result[$i]['brand_name']; 
 									?>
+
 								</span>
+								
 
 								<!-- <form method="POST" action="../actions/update_brand.php"> -->
 
@@ -54,7 +56,16 @@ function viewBrands(){
 								</div>
 							</div>
 
-							<button class="btn btn-sm" type="button"  data-bs-toggle="modal" data-bs-target="<?php echo "#exampleModal".$i;?>" ><i class="fa fa-user-edit"></i></button>
+							
+							<form action="../actions/delete_brand.php" method="POST" onSubmit="return confirm('Do you want to delete this brand?') ">
+										<input type="hidden" name="bid" value="<?php 
+									echo $result[$i]['brand_id']; 
+									?>">
+									<div>
+									<button class="btn btn-sm" type="submit" name="delete"><i class="fa fa-trash"></i></button>
+									<button class="btn btn-sm" type="button"  data-bs-toggle="modal" data-bs-target="<?php echo "#exampleModal".$i;?>" ><i class="fa fa-user-edit"></i></button>
+								</div>
+								</form>
 							<!-- Modal -->
 
 							<!-- </form> -->
@@ -129,8 +140,16 @@ function viewCategories(){
 						</div>
 					</div>
 				</div>
-
-				<button class="btn btn-sm" type="button"  data-bs-toggle="modal" data-bs-target="<?php echo "#Modal".$i;?>" ><i class="fa fa-user-edit"></i></button>
+				<form action="../actions/delete_category.php" method="POST" onSubmit="return confirm('Do you want to delete this category?') ">
+										<input type="hidden" name="cid" value="<?php 
+									echo $result[$i]['cat_id']; 
+									?>">
+									<div>
+									<button class="btn btn-sm" type="submit" name="delete"><i class="fa fa-trash"></i></button>
+									<button class="btn btn-sm" type="button"  data-bs-toggle="modal" data-bs-target="<?php echo "#Modal".$i;?>" ><i class="fa fa-user-edit"></i></button>
+								</div>
+								</form>
+				
 				<!-- Modal -->
 				<?php
 

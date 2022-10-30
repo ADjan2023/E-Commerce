@@ -56,8 +56,18 @@ class product_class extends db_connection
 		return $db1.db_query($sql);*/
 		return $this->db_query($sql);
 	}
-
 	
+	public function delete_brand($id)
+	{
+		$sql="DELETE FROM `brands` WHERE `brand_id`=$id";
+		return $this->db_query($sql);
+	}
+
+	public function delete_category($id)
+	{
+		$sql="DELETE FROM `categories` WHERE `cat_id`=$id";
+		return $this->db_query($sql);
+	}	
 
 	
 

@@ -39,5 +39,13 @@ function update_category_ctr($name,$id){
 	return $updatecategory->update_category($name,$id);
 }
 //--DELETE--//
+function delete_brand_ctr($id){
+	$deletebrand=new product_class();
+	return $deletebrand->delete_brand($id);
+}
 
+function delete_category_ctr($id){
+	$deletecategory=new product_class();
+	return $deletecategory->delete_category($id);
+}
 ?>
