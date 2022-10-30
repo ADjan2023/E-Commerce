@@ -34,7 +34,7 @@ function viewBrands(){
 													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 												</div>
 												<div class="modal-body">
-													<form action="../actions/update_brand.php" method="POST">
+													<form action="../actions/update_brand.php" method="POST" onSubmit="return confirm('Do you want to update this brand?') ">
 														<div class="form-group">
 
 															<input type="text" style="background: white;" class="form-control" name="bname" id="recipient-name" placeholder="<?php 
@@ -119,7 +119,7 @@ function viewCategories(){
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
 									<div class="modal-body">
-										<form action="../actions/update_category.php" method="POST">
+										<form action="../actions/update_category.php" method="POST" onSubmit="return confirm('Do you want to update this category?') ">
 											<div class="form-group">
 
 												<input type="text" style="background: white;" class="form-control" name="cname" id="recipient-name" placeholder="<?php 
