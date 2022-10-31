@@ -362,7 +362,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                 </div>
             </div>
             <!-- Brand and categpries End -->
-
+<!-- <div id="brands"></div> -->
 
             <!-- Recent Sales Start -->
             <!-- <div class="container-fluid pt-4 px-4">
@@ -587,11 +587,9 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script src="particles.min.js"></script>
 <script >setInterval(function(){
-   $('#brands').load('../functions/viewbrands.php');
+   $('#brands').load('../functions/viewbrandstest.php');
 }, 10) 
-setInterval(function(){
-   $('#categories').load('../functions/viewcategories.php');
-}, 10) 
+
 
 </script>
 
