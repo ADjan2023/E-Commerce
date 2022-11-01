@@ -55,17 +55,36 @@ include("../controllers/product_controller.php");
 									</div>
 								</div>
 							</div>
+							<div class="modal fade" id="<?php echo "delModal".$i;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 style="color: black;" class="modal-title" id="exampleModalLabel">Edit Brand</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+												</div>
+												<div class="modal-body">
+													<form action="../actions/delete_brand.php" method="POST" >
+														<div class="form-group">
+															<h6>Do you want to delete this brand</h6>
+														<input type="hidden" name="bid" value="<?php 
+														echo $result[$i]['brand_id']; 
+													?>">
+												</div>
 
-							
-							<form action="../actions/delete_brand.php" method="POST" onSubmit="return confirm('Do you want to delete this brand?') ">
-										<input type="hidden" name="bid" value="<?php 
-									echo $result[$i]['brand_id']; 
-									?>">
-									<div>
-									<button class="btn btn-sm" type="submit" name="delete"><i class="fa fa-trash"></i></button>
-									<button class="btn btn-sm" type="button"  data-bs-toggle="modal" data-bs-target="<?php echo "#exampleModal".$i;?>" ><i class="fa fa-user-edit"></i></button>
+
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+												<button type="submit" name="edit" class="btn btn-primary">Save changes</button>
+											</div>
+										</form>
+									</div>
 								</div>
-								</form>
+							</div>
+
+							<button class="btn btn-sm" type="button"   data-bs-toggle="modal" data-bs-target="<?php echo "#delModal".$i;?>"><i class="fa fa-trash"></i></button>
+							<button class="btn btn-sm" type="button"  data-bs-toggle="modal" data-bs-target="<?php echo "#exampleModal".$i;?>" ><i class="fa fa-user-edit"></i></button>
+							
 							<!-- Modal -->
 
 							<!-- </form> -->
