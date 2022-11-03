@@ -83,8 +83,8 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="admin_dash.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-
+                    <a href="admin_dash.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                   
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -106,8 +106,9 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                             <a href="blank.html" class="dropdown-item">Blank Page</a>
                         </div>
                     </div> -->
+                    <a href="add_product.php" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Add Product</a>
                 </div>
-                <a href="add_product.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Add Product</a>
+                
             </nav>
         </div>
         <!-- Sidebar End -->
@@ -215,7 +216,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 
 
         <!-- Sale & Revenue Start -->
-        <div class="container-fluid pt-4 px-4">
+       <!--  <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
                 <div class="col-sm-6 col-xl-3">
                     <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
@@ -254,7 +255,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Sale & Revenue End -->
 
 
@@ -305,66 +306,60 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
   </div>
 </div> -->
 
-            <!-- Brand and categories Start -->
+<!-- Add product start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                   
-                
-
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Brands</h6>
-                                
+           <form>
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Product</h6>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>Select Brand</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <label for="floatingSelect">Brand</label>
                             </div>
-                            <form method="POST" action="../actions/add_brand.php" onSubmit="return confirm('Do you want to add this brand?') ">
-                            <div class="d-flex mb-2">
-                                
-                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Brand Name" name="bname" required>
-                                <button type="submit" name="save" class="btn btn-primary ms-2">Add</button>
-                                
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="floatingSelect"
+                                    aria-label="Floating label select example">
+                                    <option selected>Select Category</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <label for="floatingSelect">Select Category</label>
                             </div>
-                            </form>
-                            
-                            <!-- <div id="brands"></div> -->
-                           
-                          <?php 
-                          include("../functions/viewbrands.php");
-                          viewBrands();
-                          ?>
-                            
-                            
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput"
+                                    placeholder="Nike">
+                                <label for="floatingInput">Product Title</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingPrice"
+                                    placeholder="Enter Price" min="1" step="0.01" pattern="^\d*(\.\d{0,2})?$">
+                                <label for="floatingPrice">Price</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="formFileLg" class="form-label">Product Image</label>
+                                <input class="form-control form-control-lg bg-dark" id="formFileLg" type="file" placeholder="Product Image">
+                            </div >
+                             <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingKey"
+                                    placeholder="Keyword">
+                                <label for="floatingInput">Product Keywords</label>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a description here"
+                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                <label for="floatingTextarea">Product description</label>
+                            </div>
+                             
                         </div>
                     </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Categories</h6>
-                                
-                            </div>
-                            <form method="POST" action="../actions/add_category.php" onSubmit="return confirm('Do you want to add this category?') ">
-                            <div class="d-flex mb-2">
-                                
-                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Category Name" name="cname" required>
-                                <button type="submit" name="save" class="btn btn-primary ms-2">Add</button>
-                                
-                            </div>
-                            </form>
-                            
-                            <?php 
-                          
-                          viewCategories();
-                          ?>
-                            
-                           
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Brand and categpries End -->
+                </form>
+            <!-- Add product end -->
 <!-- <div id="brands"></div> -->
 
             <!-- Recent Sales Start -->
