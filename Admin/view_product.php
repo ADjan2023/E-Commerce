@@ -79,13 +79,12 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 
                         }
                         ?>
-                       
 
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="admin_dash.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-
+                    <a href="admin_dash.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                   
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                         <div class="dropdown-menu bg-transparent border-0">
@@ -108,9 +107,9 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                         </div>
                     </div> -->
                     <a href="add_product.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Add Product</a>
-                <a href="view_product.php" class="nav-item nav-link "><i class="fa fa-table me-2"></i>View Products</a>
+                     <a href="view_product.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>View Products</a>
                 </div>
-
+                
             </nav>
         </div>
         <!-- Sidebar End -->
@@ -218,7 +217,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 
 
         <!-- Sale & Revenue Start -->
-        <div class="container-fluid pt-4 px-4">
+       <!--  <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
                 <div class="col-sm-6 col-xl-3">
                     <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
@@ -257,7 +256,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Sale & Revenue End -->
 
 
@@ -307,67 +306,16 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
     </div>
   </div>
 </div> -->
+<div class="container-fluid pt-4 px-4">
+  <div class="row" >
+    <?php 
+    include("../functions/viewbrands.php");
+    showProducts();
+    ?>
+   
 
-            <!-- Brand and categories Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                   
-                
-
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Brands</h6>
-                                
-                            </div>
-                            <form method="POST" action="../actions/add_brand.php" onSubmit="return confirm('Do you want to add this brand?') ">
-                            <div class="d-flex mb-2">
-                                
-                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Brand Name" name="bname" required>
-                                <button type="submit" name="save" class="btn btn-primary ms-2">Add</button>
-                                
-                            </div>
-                            </form>
-                            
-                            <!-- <div id="brands"></div> -->
-                           
-                          <?php 
-                          include("../functions/viewbrands.php");
-                          viewBrands();
-                          ?>
-                            
-                            
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="h-100 bg-secondary rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Categories</h6>
-                                
-                            </div>
-                            <form method="POST" action="../actions/add_category.php" onSubmit="return confirm('Do you want to add this category?') ">
-                            <div class="d-flex mb-2">
-                                
-                                <input class="form-control bg-dark border-0" type="text" placeholder="Enter Category Name" name="cname" required>
-                                <button type="submit" name="save" class="btn btn-primary ms-2">Add</button>
-                                
-                            </div>
-                            </form>
-                            
-                            <?php 
-                          
-                          viewCategories();
-                          ?>
-                            
-                           
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Brand and categpries End -->
+</div>
+  </div>
 <!-- <div id="brands"></div> -->
 
             <!-- Recent Sales Start -->
@@ -592,12 +540,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script src="particles.min.js"></script>
-<script >setInterval(function(){
-   $('#brands').load('../functions/viewbrandstest.php');
-}, 10) 
 
-
-</script>
 
      
 

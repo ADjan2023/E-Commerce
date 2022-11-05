@@ -56,6 +56,13 @@ class product_class extends db_connection
 		return $db1.db_query($sql);*/
 		return $this->db_query($sql);
 	}
+
+	public function update_product($cid,$bid,$title,$price,$image,$keywords,$description,$id)
+	{
+		$sql="UPDATE `products` SET `product_cat`='$cid',`product_brand`='$bid',`product_title`='$title',`product_price`='$price',`product_desc`='$description',`product_image`='$image',`product_keywords`='$keywords' WHERE `product_id`='$id'";
+		
+		return $this->db_query($sql);
+	}
 	
 	public function delete_brand($id)
 	{
@@ -69,7 +76,29 @@ class product_class extends db_connection
 		return $this->db_query($sql);
 	}	
 
+	public function select_brand($id)
+	{
+		$sql="SELECT * FROM `brands` WHERE `brand_id`=$id";
+		return $this->db_fetch_one($sql);
+	}	
 	
+	public function add_product($cid,$bid,$title,$price,$image,$keywords,$description)
+	{
+		$sql="INSERT INTO `products`( `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES ('$cid','$bid','$title','$price','$description','$image','$keywords')";
+		return $this->db_query($sql);
+	}
+
+	public function select_all_products()
+	{
+		$sql="SELECT * FROM `products`";
+		return $this->db_fetch_all($sql);
+	}
+
+	public function delete_product($id)
+	{
+		$sql="DELETE FROM `products` WHERE `product_id`=$id";
+		return $this->db_query($sql);
+	}
 
 
 }

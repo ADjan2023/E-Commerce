@@ -107,6 +107,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                         </div>
                     </div> -->
                     <a href="add_product.php" class="nav-item nav-link active"><i class="fa fa-keyboard me-2"></i>Add Product</a>
+                    <a href="view_product.php" class="nav-item nav-link "><i class="fa fa-table me-2"></i>View Products</a>
                 </div>
                 
             </nav>
@@ -308,54 +309,49 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 
 <!-- Add product start -->
             <div class="container-fluid pt-4 px-4">
-           <form>
+           <form action="../actions/add_product.php" method="POST" enctype="multipart/form-data">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Product</h6>
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect"
-                                    aria-label="Floating label select example">
-                                    <option selected>Select Brand</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <label for="floatingSelect">Brand</label>
+                                <?php 
+                          include("../functions/viewbrands.php");
+                          selectdropBrands();
+                          ?>
+                                <label for="floatingSelect">Select Brand</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect"
-                                    aria-label="Floating label select example">
-                                    <option selected>Select Category</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                
+                                       <?php 
+                          
+                          selectdropCategories();
+                          ?>
                                 <label for="floatingSelect">Select Category</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
-                                    placeholder="Nike">
+                                    placeholder="Nike" name="title" required>
                                 <label for="floatingInput">Product Title</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="floatingPrice"
-                                    placeholder="Enter Price" min="1" step="0.01" pattern="^\d*(\.\d{0,2})?$">
+                                <input type="number" class="form-control" id="floatingPrice" name="price" 
+                                    placeholder="Enter Price" min="1" step="0.01" pattern="^\d*(\.\d{0,2})?$" required>
                                 <label for="floatingPrice">Price</label>
                             </div>
                             <div class="mb-3">
                                 <label for="formFileLg" class="form-label">Product Image</label>
-                                <input class="form-control form-control-lg bg-dark" id="formFileLg" type="file" placeholder="Product Image">
+                                <input class="form-control form-control-lg bg-dark" id="formFileLg" type="file" placeholder="Product Image" name="image[]" required >
                             </div >
                              <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingKey"
-                                    placeholder="Keyword">
+                                <input type="text" class="form-control" id="floatingKey" name="keywords" 
+                                    placeholder="Keyword" required>
                                 <label for="floatingInput">Product Keywords</label>
                             </div>
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a description here"
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" placeholder="Leave a description here" name="description" 
                                     id="floatingTextarea" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">Product description</label>
                             </div>
-                             
+                              <button type="submit" class="btn btn-primary" name="add">Add Product</button>
                         </div>
                     </div>
                 </form>
