@@ -13,7 +13,6 @@ if(isset($_POST['update'])){
 	$cid=$_POST['cid'];
 	$title=$_POST['title'];
 	$price=$_POST['price'];
-	 $img=$_POST['image'];
 	$keywords=$_POST['keywords'];
 	$description=$_POST['description'];
 
