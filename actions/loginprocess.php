@@ -21,12 +21,12 @@ if(isset($_POST['login'])){
 			$_SESSION['role'] = $result['user_role'];
 			header('Location:../Admin/admin_dash.php');
 		}
-		else if(password_verify($unencryptpass, $encryptpass) and $result['user_role']!=1){
+		else if(password_verify($unencryptpass, $encryptpass) and $result['user_role']==2){
 			session_start();
 			$_SESSION['id'] = $result['customer_id'];
 			$_SESSION['name'] = $result['customer_name'];
 			$_SESSION['email'] = $result['customer_email'];
-			header('Location:../index.php');
+			header('Location:../view/index.php');
 		}
 		else{
 			session_start();

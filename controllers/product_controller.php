@@ -70,10 +70,29 @@ function add_product_ctr($cid,$bid,$title,$price,$image,$keywords,$description){
 	return $addproduct->add_product($cid,$bid,$title,$price,$image,$keywords,$description);
 }
 
-//--Select All Categories--//
+//--Select Products--//
 function select_all_products_ctr(){
 	$seeproducts=new product_class();
 	return $seeproducts->select_all_products();
 }
 
+function select_one_product_ctr($id){
+	$oneproduct=new product_class();
+	return $oneproduct->select_one_product($id);
+}
+
+function select_one_brand_ctr($id){
+	$onebrand=new product_class();
+	return $onebrand->select_one_brand($id);
+}
+
+function select_one_category_ctr($id){
+	$onecategory=new product_class();
+	return $onebrand->select_one_category($id);
+}
+
+function search_products_ctr($input){
+	$searchproducts=new product_class();
+	return $searchproducts->search_products($input);
+}
 ?>

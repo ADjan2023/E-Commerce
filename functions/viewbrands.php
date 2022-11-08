@@ -343,5 +343,35 @@ function showProducts(){
 		echo "No products added";
 	}
 }
+function viewProducts(){
+	$result=select_all_products_ctr();
+	$i=0;
+	if ($result!=false) {
+		while($i<count($result))
+		{
+			?>
+			<div class="col-lg-3 mb-4 text-center">
+						<div class="product-entry border">
+							<a href="#" class="prod-img">
+								<img src="../images/products/<?php echo $result[$i]['product_image'];  ?>" class="img-fluid" >
+							</a>
+							<div class="desc">
+								<h2><a href="#"><?php echo $result[$i]['product_title'];  ?></a></h2>
+								<span class="price">GH¢ <?php echo $result[$i]['product_price'];  ?></span>
+							</div>
+						</div>
+					</div>
+			
+
+			<?php
+
+			$i++;
+		} 
+	}
+	else{
+		echo "No products found";
+	}
+
+}
 ?>
 

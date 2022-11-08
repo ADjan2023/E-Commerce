@@ -15,6 +15,7 @@ if(isset($_POST['update'])){
 	$price=$_POST['price'];
 	$keywords=$_POST['keywords'];
 	$description=$_POST['description'];
+	$img=$_POST['image'];
 
 	//image upload
 	$output_dir = "../images/products/";/* Path for file upload */

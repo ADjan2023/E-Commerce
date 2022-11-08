@@ -35,6 +35,18 @@ class product_class extends db_connection
 		return $this->db_fetch_all($sql);
 	}
 
+	public function select_one_brand($id)
+	{
+		$sql="SELECT * FROM `brands` where `brand_id`='$id'";
+		return $this->db_fetch_one($sql);
+	}
+
+	public function select_one_category($id)
+	{
+		$sql="SELECT * FROM `categories` where `cat_id`='$id'";
+		return $this->db_fetch_one($sql);
+	}
+
 	public function select_all_categories()
 	{
 		$sql="SELECT * FROM `categories`";
@@ -94,10 +106,22 @@ class product_class extends db_connection
 		return $this->db_fetch_all($sql);
 	}
 
+	public function select_one_product($id)
+	{
+		$sql="SELECT * FROM `products` WHERE `product_id`='$id'";
+		return $this->db_fetch_one($sql);
+	}
+
 	public function delete_product($id)
 	{
 		$sql="DELETE FROM `products` WHERE `product_id`=$id";
 		return $this->db_query($sql);
+	}
+
+	public function search_products($input)
+	{
+		$sql="SELECT * FROM `products` WHERE `product_title` LIKE '%$input%'";
+		return $this->db_fetch_all($sql);
 	}
 
 
