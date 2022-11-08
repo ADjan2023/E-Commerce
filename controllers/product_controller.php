@@ -88,7 +88,7 @@ function select_one_brand_ctr($id){
 
 function select_one_category_ctr($id){
 	$onecategory=new product_class();
-	return $onebrand->select_one_category($id);
+	return $onecategory->select_one_category($id);
 }
 
 function search_products_ctr($input){

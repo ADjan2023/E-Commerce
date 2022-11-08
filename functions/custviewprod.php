@@ -114,9 +114,9 @@ function productBrand($id){
 }
 function productCategory($id){
 	
+	$result1=select_one_product_ctr($id);
 	
-	
-	$result=select_one_category_ctr($id);
+	$result=select_one_category_ctr($result1['product_cat']);
 
 	if ($result!=false) {
 		

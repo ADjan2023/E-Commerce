@@ -57,7 +57,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="index.php"><img src="../images/custimages/logo.png" width="120px"></a></div>
+							<div id="colorlib-logo"><a href="index.php"><img src="../images/custimages/logo1.png" width="170px"></a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 							<ul>

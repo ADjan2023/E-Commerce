@@ -59,7 +59,7 @@ if(isset($_POST['view'])){
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="index.php"><img src="../images/custimages/logo.png" width="120px"></a></div>
+							<div id="colorlib-logo"><a href="index.php"><img src="../images/custimages/logo1.png" width="170px"></a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 							<ul>
@@ -229,7 +229,7 @@ if(isset($_POST['view'])){
 										</div>
 
 										<div class="tab-pane border fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
-											<p><?php  productBrand($id); ?></p>
+											<p><?php  productBrand($id); ?> (<?php  productCategory($id); ?>)</p>
 										</div>
 
 										
