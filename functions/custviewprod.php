@@ -9,14 +9,16 @@ function viewProducts(){
 			?>
 			<div class="col-lg-3 mb-4 text-center">
 				<div class="product-entry border" class="prod-img">
-					<a href=""><i class="fas fa-shopping-cart"> Add to cart</i></a>
+					<div style="background-color: #840212;">
+					<a href="" style="color: white;"><i class="fas fa-shopping-cart"> Add to cart</i></a>
+				</div>
 					<img src="../images/products/<?php echo $result[$i]['product_image'];  ?>" class="img-fluid" >
-					<div class="desc">
+					<div class="desc"  >
 						<h2><?php echo $result[$i]['product_title'];  ?></h2>
 						<span class="price">GH¢ <?php echo $result[$i]['product_price'];  ?></span>
 						<form action="../view/product-detail.php" method="POST">
 							<input type="hidden" name="pid" value="<?php echo $result[$i]['product_id'];  ?>">
-							<button class="btn btn-primary submit-search text-center" name="view" type="submit"><i class="fa fa-eye"> View Product</i></button>
+							<button class="btn btn-primary submit-search text-center" name="view" type="submit" style="background-color: #840212;"><i class="fa fa-eye"> View Product</i></button>
 						</form>
 					</div>
 				</div>
@@ -137,14 +139,16 @@ function searchedProducts($input){
 			?>
 			<div class="col-lg-3 mb-4 text-center">
 				<div class="product-entry border" class="prod-img">
-					<a href=""><i class="fas fa-shopping-cart"> Add to cart</i></a>
+					<div style="background-color: #840212;">
+					<a href=""><i class="fas fa-shopping-cart" style="color: white;"> Add to cart</i></a>
+				</div>
 					<img src="../images/products/<?php echo $result[$i]['product_image'];  ?>" class="img-fluid" >
 					<div class="desc">
 						<h2><?php echo $result[$i]['product_title'];  ?></h2>
 						<span class="price">GH¢ <?php echo $result[$i]['product_price'];  ?></span>
 						<form action="../view/product-detail.php" method="POST">
 							<input type="hidden" name="pid" value="<?php echo $result[$i]['product_id'];  ?>">
-							<button class="btn btn-primary submit-search text-center" type="submit"><i class="fa fa-eye"> View Product</i></button>
+							<button class="btn btn-primary submit-search text-center" type="submit" style="background-color: #840212;"><i class="fa fa-eye"> View Product</i></button>
 						</form>
 					</div>
 				</div>
