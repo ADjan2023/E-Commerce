@@ -9,6 +9,7 @@ function viewProducts(){
 			?>
 			<div class="col-lg-3 mb-4 text-center">
 				<div class="product-entry border" class="prod-img">
+					<a href=""><i class="fas fa-shopping-cart"> Add to cart</i></a>
 					<img src="../images/products/<?php echo $result[$i]['product_image'];  ?>" class="img-fluid" >
 					<div class="desc">
 						<h2><?php echo $result[$i]['product_title'];  ?></h2>
@@ -136,6 +137,7 @@ function searchedProducts($input){
 			?>
 			<div class="col-lg-3 mb-4 text-center">
 				<div class="product-entry border" class="prod-img">
+					<a href=""><i class="fas fa-shopping-cart"> Add to cart</i></a>
 					<img src="../images/products/<?php echo $result[$i]['product_image'];  ?>" class="img-fluid" >
 					<div class="desc">
 						<h2><?php echo $result[$i]['product_title'];  ?></h2>
