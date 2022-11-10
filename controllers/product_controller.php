@@ -95,4 +95,9 @@ function search_products_ctr($input){
 	$searchproducts=new product_class();
 	return $searchproducts->search_products($input);
 }
+function count_cart_ctr($cid,$ip){
+	$countcart=new product_class();
+	return $countcart->cart_count($cid,$ip);
+}
+
 ?>

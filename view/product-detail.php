@@ -101,7 +101,7 @@ if(isset($_POST['view'])){
 								</li>
 								<li><a href="">About</a></li>
 								<li><a href="">Contact</a></li>
-								<li class="cart"><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart [0]</a></li>
+								<li class="cart"><a href="cart.php"><i class="fas fa-shopping-cart"></i> Cart</a></li>
 							</ul>
 						</div>
 					</div>
@@ -182,22 +182,26 @@ if(isset($_POST['view'])){
 							</div>
 							
 						</div>
+						<form method="POST" action="../actions/add_cart.php">
 						<div class="input-group mb-4">
 							<span class="input-group-btn">
-								<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+								<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field=""  onclick="decrement();">
 									<i class="fa fa-minus"></i>
 								</button>
 							</span>
-							<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+							<input type="text" id='quantity' name="quantity" class="form-control input-number"  min="1" max="100">
 							<span class="input-group-btn ml-1">
-								<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+								<button type="button" class="quantity-right-plus btn" data-type="plus" data-field=""  onclick="increment();">
 									<i class="fa fa-plus"></i>
 								</button>
 							</span>
 						</div>
 						<div class="row">
 							<div class="col-sm-12 text-center">
-								<p class="addtocart"><a href="cart.html" class="btn btn-primary btn-addtocart"><i class="fas fa-shopping-cart"></i> Add to Cart</a></p>
+								
+									<input type="hidden" name="pid" value="<?php echo $id; ?>">
+								<div class="addtocart"><button type="submit" name="add1" style="background-color: #840212;" class="btn btn-primary btn-addtocart"><i class="fas fa-shopping-cart"> Add to Cart</i> </button></div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -350,40 +354,26 @@ if(isset($_POST['view'])){
 
 
 		<script>
-			$(document).ready(function(){
-
-				var quantitiy=0;
-				$('.quantity-right-plus').click(function(e){
-
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-
-		        $('#quantity').val(quantity + 1);
-
-
-		            // Increment
-
-		          });
-
-				$('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-
-		            // Increment
-		            if(quantity>0){
-		            	$('#quantity').val(quantity - 1);
-		            }
-		          });
-
-			});
+			var data = 1;
+  
+//printing default value of data that is 0 in h2 tag
+document.getElementById("quantity").value = data;
+  
+//creation of increment function
+function increment() {
+    data = data + 1;
+    document.getElementById("quantity").value = data;
+}
+//creation of decrement function
+function decrement() {
+	if (data>1) {
+    data = data - 1;
+    document.getElementById("quantity").value = data;
+}
+else{
+	data = 1;
+}
+}
 		</script>
 
 

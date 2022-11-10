@@ -339,7 +339,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
                             </div>
                             <div class="mb-3">
                                 <label for="formFileLg" class="form-label">Product Image</label>
-                                <input class="form-control form-control-lg bg-dark" id="formFileLg" type="file" placeholder="Product Image" name="image[]" required >
+                                <input class="form-control form-control-lg bg-dark" id="formFileLg" type="file" placeholder="Product Image" name="image[]" required accept="image/*" >
                             </div >
                              <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingKey" name="keywords" 

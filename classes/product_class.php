@@ -123,6 +123,11 @@ class product_class extends db_connection
 		$sql="SELECT * FROM `products` WHERE `product_title` LIKE '%$input%'";
 		return $this->db_fetch_all($sql);
 	}
+	public function cart_count($cid,$ip)
+	{
+		$sql="SELECT * FROM `cart` WHERE `c_id`='$cid' and `ip_add`='$ip'";
+		return $this->db_count($this->db_query($sql));
+	}
 
 
 }

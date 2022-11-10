@@ -10,7 +10,11 @@ function viewProducts(){
 			<div class="col-lg-3 mb-4 text-center">
 				<div class="product-entry border" class="prod-img">
 					<div style="background-color: #840212;">
-					<a href="" style="color: white;"><i class="fas fa-shopping-cart"> Add to cart</i></a>
+						<form method="POST" action="../actions/add_cart.php">
+							<input type="hidden" name="pid" value="<?php echo $result[$i]['product_id'];  ?>">
+							<input type="hidden" name="quantity" value="1">
+					<button class="btn text-center" type="submit" style="background-color: transparent; border: none; color: white; " name="add"><i class="fas fa-shopping-cart"> Add to cart</i></button>
+				</form>
 				</div>
 					<img src="../images/products/<?php echo $result[$i]['product_image'];  ?>" class="img-fluid" >
 					<div class="desc"  >
@@ -25,10 +29,12 @@ function viewProducts(){
 			</div>
 			
 
-			<?php
+			<?php 
+
 
 			$i++;
-		} 
+		}
+		  
 	}
 	else{
 		echo "No products found";
@@ -162,6 +168,25 @@ function searchedProducts($input){
 	}
 	else{
 		echo "No products found";
+	}
+
+}
+function countCart($cid){
+	$ip = $_SERVER['REMOTE_ADDR'];
+ 
+    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+        $ip = $_SERVER['HTTP_CLIENT_IP'];
+    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }
+
+	$result=count_cart_ctr($cid,$ip);
+
+	if ($result!=false) {
+		echo $result;
+	}
+	else{
+		echo 0;
 	}
 
 }

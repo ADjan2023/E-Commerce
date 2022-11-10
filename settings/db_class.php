@@ -113,7 +113,7 @@ class db_connection
 	*get select data
 	*@return a count
 	**/
-	function db_count(){
+	function db_count($sql){
 		
 		//check if result was set
 		if ($this->results == null) {
