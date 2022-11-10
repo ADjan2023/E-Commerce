@@ -87,10 +87,7 @@ session_start();
 								<li><a href="">Categories</a></li>
 								<li><a href="">About</a></li>
 								<li><a href="">Contact</a></li>
-								 
-								<li class="cart active" ><a href="cart.php"><i class="fas fa-shopping-cart"></i> Cart</a></li>
 
-								<li class="cart" ></li>
 							</ul>
 
 						</div>
