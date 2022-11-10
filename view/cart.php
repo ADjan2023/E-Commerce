@@ -55,9 +55,9 @@ session_start();
 							<div id="colorlib-logo"><a href="index.php"><img src="../images/custimages/logo1.png" width="170px"></a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
-							<ul>
-								 <li class="has-dropdown  cart" >
-									<a href=""><?php
+								<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" style="background-color: #840212;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   <?php
 
 
                             if (!empty($_SESSION['name'])){
@@ -66,15 +66,15 @@ session_start();
 
 
                             }
-                        ?> <img class="rounded-circle me-lg-2" src="../images/profile.png" alt="" style="width: 40px; height: 40px;"></a>
-									<ul class="dropdown">
-										<li><a href="">View Profile</a></li>
-										<li><a href="../actions/logout.php">Logout</a></li>
-										
-									</ul>
-								</li>
-							
-							</ul>
+                        ?> <img class="rounded-circle me-lg-2" src="../images/profile.png" alt="" style="width: 40px; height: 40px;">
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">View Profile</a>
+    <a class="dropdown-item" href="../actions/logout.php">Logout</a>
+  </div>
+</div>
+
 
 						</div>
 						
