@@ -183,7 +183,7 @@ function countCart($cid){
 	$result=count_cart_ctr($cid,$ip);
 
 	if ($result!=false) {
-		echo $result;
+		print_r($result['cart_num']);
 	}
 	else{
 		echo 0;

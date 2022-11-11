@@ -33,12 +33,12 @@ function showCart($id){
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="<?php echo $result[$i]['quantity'];  ?>" min="1" max="100">
+									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="<?php echo $result[$i]['qty'];  ?>" min="1" max="100">
 								</div>
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<span class="price">GH¢<?php echo ($product['product_price'])*($result[$i]['quantity']);  ?></span>
+									<span class="price">GH¢<?php echo ($product['product_price'])*($result[$i]['qty']);  ?></span>
 								</div>
 							</div>
 							<div class="one-eight text-center">
@@ -55,7 +55,7 @@ function showCart($id){
 
 			<?php 
 
-$total+=($product['product_price'])*($result[$i]['quantity']);
+$total+=($product['product_price'])*($result[$i]['qty']);
 			$i++;
 		}
 		?>

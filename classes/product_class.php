@@ -125,8 +125,8 @@ class product_class extends db_connection
 	}
 	public function cart_count($cid,$ip)
 	{
-		$sql="SELECT * FROM `cart` WHERE `c_id`='$cid' and `ip_add`='$ip'";
-		return $this->db_count($this->db_query($sql));
+		$sql="SELECT SUM(`qty`) as `cart_num` FROM `cart` WHERE `c_id`='$cid' and `ip_add`='$ip'";
+		return $this->db_fetch_one($sql);
 	}
 
 
