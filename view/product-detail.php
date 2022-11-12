@@ -63,8 +63,8 @@ if(isset($_POST['view'])){
 						</div>
 						<div class="col-sm-5 col-md-3">
 								<div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" style="background-color: #840212;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   <?php
+  <a class="btn btn-secondary dropdown-toggle" style="background-color: #fff ; border: 0px; color: black; " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  	<?php
 
 
                             if (!empty($_SESSION['name'])){
@@ -73,15 +73,16 @@ if(isset($_POST['view'])){
 
 
                             }
-                        ?> <img class="rounded-circle me-lg-2" src="../images/profile.png" alt="" style="width: 40px; height: 40px;">
+                        ?>
+   <img class="rounded-circle me-lg-2" src="../images/profile.png" alt="" style="width: 40px; height: 40px;">
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">View Profile</a>
+  	
+    <p class="dropdown-item" >View Profile</p>
     <a class="dropdown-item" href="../actions/logout.php">Logout</a>
   </div>
 </div>
-
 
 						</div>
 						
