@@ -36,7 +36,7 @@ class cart_class extends db_connection
 
 public function show_cart($cid,$ip)
 	{
-		$sql="SELECT * from `cart` where `c_id`='$cid' and `ip_add`='$ip' ";
+		$sql="SELECT * from `cart` where `c_id`='$cid' ";
 		return $this->db_fetch_all($sql);
 	}
 
