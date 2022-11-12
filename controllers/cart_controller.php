@@ -26,6 +26,11 @@ function select_one_prod_ctr($id){
 
 
 //--UPDATE--//
+function update_quantity_cart_ctr($cid,$pid,$quantity){
+	$updateqtycart=new cart_class();
+	return $updateqtycart->update_quantity_cart($cid,$pid,$quantity);
+}
+
 
 //--DELETE--//
 function delete_from_cart_ctr($cid,$pid){

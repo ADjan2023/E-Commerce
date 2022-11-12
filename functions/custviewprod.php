@@ -146,7 +146,11 @@ function searchedProducts($input){
 			<div class="col-lg-3 mb-4 text-center">
 				<div class="product-entry border" class="prod-img">
 					<div style="background-color: #840212;">
-					<a href=""><i class="fas fa-shopping-cart" style="color: white;"> Add to cart</i></a>
+						<form method="POST" action="../actions/add_cart.php">
+							<input type="hidden" name="pid" value="<?php echo $result[$i]['product_id'];  ?>">
+							<input type="hidden" name="quantity" value="1">
+					<button class="btn text-center" type="submit" style="background-color: transparent; border: none; color: white; " name="add"><i class="fas fa-shopping-cart"> Add to cart</i></button>
+				</form>
 				</div>
 					<img src="../images/products/<?php echo $result[$i]['product_image'];  ?>" class="img-fluid" >
 					<div class="desc">

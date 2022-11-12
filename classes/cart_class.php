@@ -51,7 +51,11 @@ public function delete_from_cart($cid,$pid)
 		$sql="DELETE FROM `cart` WHERE `c_id`='$cid' and `p_id`='$pid'";
 		return $this->db_query($sql);
 	}
-
+public function update_quantity_cart($cid,$pid,$quantity)
+	{
+		$sql="UPDATE `cart` SET `qty`='$quantity' WHERE `c_id`='$cid' and `p_id`='$pid'";
+		return $this->db_query($sql);
+	}
 }
 
 ?>
