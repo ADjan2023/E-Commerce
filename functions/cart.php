@@ -33,9 +33,10 @@ function showCart($id){
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<form method="POST" action="../actions/update_qty.php" id='cart'>
-									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="<?php echo $result[$i]['qty'];  ?>" min="1" max="100" onfocusout="document.getElementById('cart').submit();">
-									<input type="hidden" name="pid" value="<?php echo $product['product_id'];  ?>">
+									<form method="POST" action="../actions/update_qty.php" id='<?php echo 'cart'.$i;  ?>'>
+										<input type="hidden" name="pid" value="<?php echo $product['product_id'];  ?>">
+									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="<?php echo $result[$i]['qty'];  ?>" min="1" max="100" onfocusout="document.getElementById('<?php echo 'cart'.$i;  ?>').submit();">
+									
 								</form>
 								</div>
 							</div>
