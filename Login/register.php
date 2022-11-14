@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="../css/style.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(../images/bg.jpeg);">
+	<body class="img js-fullheight" style="background-color: black;">
 		<section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center">
