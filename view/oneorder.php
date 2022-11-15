@@ -1,11 +1,13 @@
-<?php 
+<?php
 session_start();
-    include("../functions/custviewprod.php");
 if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['email'] and $_SESSION['role']!=2) ){
 	header("location:../Login/login.php"); // redirects to login page
         exit;
 }
+if(isset($_POST['oid'])){
 ?>
+
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -15,11 +17,10 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rokkitt:100,300,400,700" rel="stylesheet">
 	 <link href="img/favicon.ico" rel="icon">
-
-	 <!-- Icon Font Stylesheet -->
- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="../css/custcss/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -61,8 +62,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 							<div id="colorlib-logo"><a href="index.php"><img src="../images/custimages/logo1.png" width="170px"></a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
-							
-							<div class="dropdown show">
+								<div class="dropdown show">
   <a class="btn btn-secondary dropdown-toggle" style="background-color: #fff ; border: 0px; color: black; " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   	<?php
 
@@ -84,6 +84,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
   </div>
 </div>
 
+
 						</div>
 						
 			         
@@ -91,14 +92,11 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 					<div class="row">
 						<div class="col-sm-10 text-left menu-1">
 							<ul>
-								<li class="active"><a href="index.php">Home</a></li>
+								<li ><a href="index.php">Home</a></li>
 								<li><a href="">Categories</a></li>
 								<li><a href="">About</a></li>
 								<li><a href="">Contact</a></li>
-								 
-								<li class="cart"><a href="cart.php"><i class="fas fa-shopping-cart"></i> Cart [<?php countCart($_SESSION['id']); ?>]</a></li>
 
-								<li class="cart" ></li>
 							</ul>
 
 						</div>
@@ -129,154 +127,48 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 				</div>
 			</div>
 		</nav>
-		<aside id="colorlib-hero">
-			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(../images/custimages/slide1.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Quality</h1>
-					   					<h2 class="head-2">Authentic</h2>
-					   					<h2 class="head-3">Shoes</h2>
-					   					<p class="category"><span>New trending shoes</span></p>
-					   					<p><a href="" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(../images/custimages/slide2.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Christmas</h1>
-					   					<h2 class="head-2">Sale</h2>
-					   					<h2 class="head-3"><strong class="font-weight-bold">20%</strong> Off</h2>
-					   					<p class="category"><span>Big sale football boots</span></p>
-					   					<p><a href="" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(../images/custimages/slide3.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">New</h1>
-					   					<h2 class="head-2">Arrival</h2>
-					   					<h2 class="head-3">up to <strong class="font-weight-bold">30%</strong> off</h2>
-					   					<p class="category"><span>New Jordan's</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
-		</aside>
-		
-		<nav class="colorlib-nav" role="navigation">
-			<div class="top-menu">
-				<div class="container">
-					<div class="colorlib-intro">
-					
-						
-						
-			            <form action="productsearch.php" method="POST" class="search-wrap">
-			               <div class="form-group">
-			                  <input type="input" name="title" class="form-control search" placeholder="Search Product" required>
-			                  <button class="btn btn-primary submit-search text-center" name="search" type="submit"><i class="fa fa-search"></i></button>
-			               </div>
-			            </form>
-			         
-			   
-					
-				</div>
-			</div>
-				</div>
-		</nav>
 
-		<!-- <div class="colorlib-product">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-6 text-center">
-						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/men.jpg);"></a>
-							<div class="desc">
-								<h2><a href="#">Shop Men's Collection</a></h2>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 text-center">
-						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/women.jpg);"></a>
-							<div class="desc">
-								<h2><a href="#">Shop Women's Collection</a></h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-		<div class="colorlib-product">
+		<div class="breadcrumbs">
 			<div class="container">
-				<div class="row row-pb-md">
-					
-					
-					
-					 <?php 
-
-    viewProducts();
-    ?>
-					
-					
+				<div class="row">
+					<div class="col">
+						<p class="bread"><span><a href="index.php">Home</a></span> / <span>Order</span></p>
+					</div>
 				</div>
-				
 			</div>
 		</div>
 
-		<!-- <div class="colorlib-partner">
+
+		<div class="colorlib-product">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
-						<h2>Trusted Partners</h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col partner-col text-center">
-						<img src="images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-				</div>
+			
+				<div class="row row-pb-lg">
+					<div class="col-md-12">
+						<div class="product-name d-flex">
+							<div class="one-forth text-left px-4">
+								<span>Product Details</span>
+							</div>
+							<div class="one-eight text-center">
+								<span>Price</span>
+							</div>
+							<div class="one-eight text-center">
+								<span>Quantity</span>
+							</div>
+							<div class="one-eight text-center">
+								<span>Total</span>
+							</div>
+						
+						</div>
+						
+						<?php
+						require('../functions/cart.php');
+						showOrder($_POST['oid']);
+
+						?>
+				
+				
 			</div>
-		</div> -->
+		</div>
 
 		<footer id="colorlib-footer" role="contentinfo">
 			<div class="container">
@@ -356,7 +248,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</div>
 
 	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+		<a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
 	</div>
 	
 	<!-- jQuery -->
@@ -383,13 +275,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<!-- Main -->
 	<script src="../js/custjs/main.js"></script>
 
-	<script >setInterval(function(){
-   $('#products').load('../functions/custviewprod.php');
-}, 10) 
-
-
-</script>
-
-
 	</body>
 </html>
+
+<?php 
+}
+else{
+	header('Location:../view/order-details.php');
+}
+
+?>

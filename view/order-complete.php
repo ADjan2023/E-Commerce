@@ -18,7 +18,7 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 	 <link href="img/favicon.ico" rel="icon">
 
 	 <!-- Icon Font Stylesheet -->
- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="../css/custcss/animate.css">
@@ -114,12 +114,12 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 								<div class="owl-carousel2">
 									<div class="item">
 										<div class="col">
-											<h3><a href="#">Merry Christmas and a Happy New Year</a></h3>
+											<h3><a href="#">25% off (Almost) Everything! Use Code: Summer Sale</a></h3>
 										</div>
 									</div>
 									<div class="item">
 										<div class="col">
-											<h3><a href="#">New Website</a></h3>
+											<h3><a href="#">Our biggest sale yet 50% off all summer shoes</a></h3>
 										</div>
 									</div>
 								</div>
@@ -129,154 +129,50 @@ if (empty($_SESSION['id']) and empty($_SESSION['name']) and empty($_SESSION['ema
 				</div>
 			</div>
 		</nav>
-		<aside id="colorlib-hero">
-			<div class="flexslider">
-				<ul class="slides">
-			   	<li style="background-image: url(../images/custimages/slide1.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Quality</h1>
-					   					<h2 class="head-2">Authentic</h2>
-					   					<h2 class="head-3">Shoes</h2>
-					   					<p class="category"><span>New trending shoes</span></p>
-					   					<p><a href="" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(../images/custimages/slide2.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">Christmas</h1>
-					   					<h2 class="head-2">Sale</h2>
-					   					<h2 class="head-3"><strong class="font-weight-bold">20%</strong> Off</h2>
-					   					<p class="category"><span>Big sale football boots</span></p>
-					   					<p><a href="" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			   	<li style="background-image: url(../images/custimages/slide3.jpg);">
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1 class="head-1">New</h1>
-					   					<h2 class="head-2">Arrival</h2>
-					   					<h2 class="head-3">up to <strong class="font-weight-bold">30%</strong> off</h2>
-					   					<p class="category"><span>New Jordan's</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
-				   					</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-			   	</li>
-			  	</ul>
-		  	</div>
-		</aside>
-		
-		<nav class="colorlib-nav" role="navigation">
-			<div class="top-menu">
-				<div class="container">
-					<div class="colorlib-intro">
-					
-						
-						
-			            <form action="productsearch.php" method="POST" class="search-wrap">
-			               <div class="form-group">
-			                  <input type="input" name="title" class="form-control search" placeholder="Search Product" required>
-			                  <button class="btn btn-primary submit-search text-center" name="search" type="submit"><i class="fa fa-search"></i></button>
-			               </div>
-			            </form>
-			         
-			   
-					
-				</div>
-			</div>
-				</div>
-		</nav>
 
-		<!-- <div class="colorlib-product">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm-6 text-center">
-						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/men.jpg);"></a>
-							<div class="desc">
-								<h2><a href="#">Shop Men's Collection</a></h2>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 text-center">
-						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/women.jpg);"></a>
-							<div class="desc">
-								<h2><a href="#">Shop Women's Collection</a></h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-		<div class="colorlib-product">
+		<div class="breadcrumbs">
 			<div class="container">
-				<div class="row row-pb-md">
-					
-					
-					
-					 <?php 
-
-    viewProducts();
-    ?>
-					
-					
+				<div class="row">
+					<div class="col">
+						<p class="bread"><span><a href="index.php">Home</a></span> / <span>Purchase Complete</span></p>
+					</div>
 				</div>
-				
 			</div>
 		</div>
 
-		<!-- <div class="colorlib-partner">
+
+		<div class="colorlib-product">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
-						<h2>Trusted Partners</h2>
+				<div class="row row-pb-lg">
+					<div class="col-sm-10 offset-md-1">
+						<div class="process-wrap">
+							<div class="process text-center active">
+								<p><span>01</span></p>
+								<h3>Shopping Cart</h3>
+							</div>
+							<div class="process text-center active">
+								<p><span>02</span></p>
+								<h3>Checkout</h3>
+							</div>
+							<div class="process text-center active">
+								<p><span>03</span></p>
+								<h3>Order Complete</h3>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col partner-col text-center">
-						<img src="images/brand-1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-2.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-3.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-4.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
-					</div>
-					<div class="col partner-col text-center">
-						<img src="images/brand-5.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					<div class="col-sm-10 offset-sm-1 text-center">
+						<p class="icon-addcart"><span><i class="fa fa-check"></i></span></p>
+						<h2 class="mb-4">Thank you for purchasing, Your order is complete</h2>
+						<p>
+							<a href="order-details.php"class="btn btn-primary btn-outline-primary"><i class="fas fa-eye"></i> View Order Details</a>
+							<a href="index.php"class="btn btn-primary btn-outline-primary"><i class="fas fa-shopping-cart"></i> Continue Shopping</a>
+						</p>
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 
 		<footer id="colorlib-footer" role="contentinfo">
 			<div class="container">
@@ -356,7 +252,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</div>
 
 	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+		<a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
 	</div>
 	
 	<!-- jQuery -->
@@ -383,13 +279,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<!-- Main -->
 	<script src="../js/custjs/main.js"></script>
 
-	<script >setInterval(function(){
-   $('#products').load('../functions/custviewprod.php');
-}, 10) 
-
-
-</script>
-
 
 	</body>
 </html>
+
