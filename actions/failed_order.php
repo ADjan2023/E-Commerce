@@ -20,7 +20,7 @@ if(isset($_POST['cid'])){
 
 		$result=get_order_ctr($invoice,$_SESSION['id']);
 		if(update_order_ctr($result['order_id'],$status)==true){
-		header('Location:../view');
+		header('Location:../view/order-fail.php');
 		}
 		
 	
