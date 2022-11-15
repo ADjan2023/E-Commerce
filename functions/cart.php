@@ -249,6 +249,11 @@ function showOrders($id){
 							</div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
+									<span class="price"><?php echo $result[$i]['order_status'];  ?></span>
+								</div>
+							</div>
+							<div class="one-eight text-center">
+								<div class="display-tc">
 									<form method="POST" action="oneorder.php">
 										<input type="hidden" name="oid" value="<?php echo $result[$i]['order_id'];  ?>">
 									<span class="price"><button type="submit" name="view" class="btn btn-primary btn-outline-primary" ><i class="fas fa-eye"></i> View</button></span>

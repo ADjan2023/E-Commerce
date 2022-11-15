@@ -148,6 +148,9 @@ session_start();
 								<span>Order Date</span>
 							</div>
 							<div class="one-eight text-center">
+								<span>Order Status</span>
+							</div>
+							<div class="one-eight text-center">
 								<span>View</span>
 							</div>
 						</div>
